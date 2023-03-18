@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-Details</title>
+    <link rel="shortcut icon" type="image/png" href="https://cdn.pixabay.com/photo/2014/04/02/10/53/shopping-cart-304843__340.png">
+
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; padding-top: 100px;">
+            <h2 class="heading">Fill Up Your Order Details</h2>
+        </div>
+        <!-- Inputs -->
+        <script> var submitted=false;
+        </script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"
+        onload="if(submitted) {window.location='http://amazon.in/';}" >
+        
+        </iframe>
+
+        <div style=" padding-top: 50px;">
+            <form onsubmit="return" target="hidden_iframe" id="gform" method="POST" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfn2kfuTt51bGTp3sDgKLbyaGcPendoEAU_tpa_wj542NnRaQ/formResponse" style="text-align: center;">
+              
+                <input id="frm-name" class="inp-dt" type="text" placeholder="Full Name..." required name="entry.118238290"><br>
+                <input id="frm-pn" class="inp-dt" type="number" placeholder="Phone Number..." required name="entry.880843187"><br>
+                <input id="frm-city" class="inp-dt-special" type="text" placeholder="City..." required name="entry.1430051846">
+                <input id="frm-state" class="inp-dt-special" type="text" placeholder="State..." required name="entry.1927576384"><br>
+                <input id="frm-pincode" class="inp-dt-special" type="number" placeholder="Pincode..." required name="entry.430523617">
+                <input id="frm-country" class="inp-dt-special" type="text" placeholder="Country..." required name="entry.1470772245"><br>  
+                <textarea id="frm-address" class="inp-dt" type="text" placeholder="Address..." rows="4" required name="entry.205015708"></textarea><br>
+                <textarea id="frm-land" class="inp-dt" type="text" placeholder="LandMark..." rows="4" required name="entry.1573139113"></textarea><br>
+                <input readonly id="prdctUrl" class="inp-dt" type="text" placeholder="Product Url..." required name="entry.1681121875"><br>
+                <input onclick="alrt()" class="frm-smt" type="submit" value="Submit">
+
+
+            </form>
+          </div>
+          
+        
+    </div>
+
+
+
+<script>
+
+
+        const orderUrl = localStorage.getItem('orderUrl');
+        prdctUrl.value = orderUrl
+
+    function alrt(){
+        var A = document.getElementById("frm-name").value;
+        var B = document.getElementById("frm-pn").value;
+        var C = document.getElementById("frm-city").value;
+        var D = document.getElementById("frm-state").value;
+        var E = document.getElementById("frm-country").value;
+        var F = document.getElementById("frm-pincode").value;
+        var G = document.getElementById("frm-address").value;
+        var H = document.getElementById("frm-land").value;
+        var I = document.getElementById("prdctUrl").value;
+        
+        
+        
+
+
+        if(A===""||B===""||C===""||D===""||E===""||F===""||G===""||H===""||I===""){
+             alert("Please enter something");
+        }else{
+            alert("Order placed Successfully");
+            
+            setTimeout(() => {
+        window.history.go(-1);
+    }, 2000);
+        }
+        
+     
+ }
+
+    // --------------------
+    
+
+    </script>
+
+
+
+
+<style>
+    .container{
+        width: 100%;
+        background-color: rgb(33, 26, 51);
+        height: 100vh;
+    }
+    *{
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    }
+    .heading{
+        color: rgb(255, 255, 255);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .inp-dt{
+        width: 500px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(50, 40, 74);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+    }
+    .inp-dt-special{
+        width: 237px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(50, 40, 74);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+    }
+    .inp-dt:focus{
+        outline: none;
+    }
+    .inp-dt-special:focus{
+        outline: none;
+    }
+    .frm-smt{
+        width: 523px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(81, 47, 159);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+    }
+
+
+    @media (max-width: 768px) {
+        .inp-dt{
+        width: 370px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(50, 40, 74);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 500;
+        margin-top: 13px;
+    }  
+    
+    .frm-smt{
+        width: 250px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(81, 47, 159);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+    }
+
+    .inp-dt-special{
+        width: 170px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(50, 40, 74);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+    }
+  
+}
+</style>
+</body>
+</html>
