@@ -47,8 +47,17 @@
 <script>
 
 
-        const orderUrl = localStorage.getItem('orderUrl');
-        prdctUrl.value = orderUrl
+        // Get the embedded URL parameter from the current page URL
+const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
+
+// Decode the embedded URL parameter
+const currentUrl = decodeURIComponent(currentUrlParam);
+
+// Display the embedded URL on the page
+const prdctUrl = document.getElementById("prdctUrl");
+
+
+        prdctUrl.value = currentUrl;
 
     function alrt(){
         var A = document.getElementById("frm-name").value;
